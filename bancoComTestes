@@ -112,4 +112,6 @@ from tipo_veiculo, veiculo, contrato_aluguel, cliente
 where cliente.id_cliente = contrato_aluguel.id_cliente and cliente.nome = "Alexandre Zamberlan" and tipo_veiculo.id_tipo_veiculo = veiculo.id_tipo_veiculo and veiculo.id_veiculo = contrato_aluguel.id_veiculo;
 
 # Mostre os clientes e os escritórios associados no contrato de aluguel.
-select 
+select cliente.nome as "cliente", escritorio.nome as "escritorio"
+from cliente, contrato_aluguel, escritorio
+where cliente.id_cliente = contrato_aluguel.id_cliente and escritorio.id_escritorio = contrato_aluguel.id_escritorio;
